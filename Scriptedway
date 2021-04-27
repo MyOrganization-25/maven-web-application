@@ -1,5 +1,8 @@
 node
 {
+
+    properties([pipelineTriggers([pollSCM('* * * * *')])])
+    
     def mavenHome= tool name: "Maven3.6.3"
     stage('CheckOut')
     {
